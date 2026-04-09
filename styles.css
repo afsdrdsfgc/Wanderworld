@@ -1,4 +1,16 @@
-#world_contaner {
-	position: relative;
-	
+#world-wrapper {
+    position: relative;
+    width: 800px;
+    height: 600px; 
+    border: 1px solid #ccc; 
+
+}
+
+#world-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+body {
+	background-color: blueviolet;
 }

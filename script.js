@@ -1,11 +1,10 @@
-const world = document.querySelector('#world_contener')
+const world = document.querySelector('#world-container');
 
 
 
 async function rendermap() {
   const response = await fetch('https://tinkr.tech/sdb/poly/wander');
   const data = await response.json();
-  if (!world){return}
   world.innerHTML = ""
   for(const player of data.players){
     const newplayer = document.createElement('div')
