@@ -12,8 +12,14 @@ async function rendermap() {
     newplayer.style.left = player.x + 'px'
     newplayer.style.top = player.y + 'px'
     const player_sprite = document.createElement('img')
-    player_sprite.src = player.image
+    player_sprite.src = 'https://tinkr.tech' + player.image
+    player_sprite.style.imageRendering = 'pixelated'
     newplayer.appendChild(player_sprite)
+    const player_name = document.createElement('p')
+    player_name.textContent = player.username
+    player_name.style.color = 'white'
+    newplayer.appendChild(player_name)
+    console.log(newplayer)
     world.appendChild(newplayer)
   }
 }
