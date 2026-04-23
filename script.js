@@ -1,5 +1,6 @@
 const world = document.querySelector('#world-container');
-
+const join = document.querySelector('#joinbtn')
+let username = null
 
 
 async function rendermap() {
@@ -27,3 +28,20 @@ async function rendermap() {
 rendermap()
 
 setInterval(rendermap, 1000);
+
+joinbtn.addEventListener('click', async function() {
+  if (username === null){
+    username = prompt('What is your username?')}
+  const response = await fetch('https://tinkr.tech/sdb/poly/wander', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+      },    
+      body: JSON.stringify({
+        "action": "join",
+        'username': username
+      })
+    })
+  const result = await response.json();
+  console.log(result)
+})
